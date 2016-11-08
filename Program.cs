@@ -23,12 +23,12 @@ namespace csharpTriggerbotCsgo
         {
             Console.Beep(100, 400); //started successfully
 
-            int playerBase = mem.readInt((int)(client) + 0x00A3B43C); //0x00A3B43C is the localplayer address in memory
+            int playerBase = mem.readInt((int)(client) + 0x00A8F53C); //0x00A3B43C is the localplayer address in memory
             windowsAPIs winAPI = new windowsAPIs();
              
             while (true)
             {
-                int inCross = mem.readInt(playerBase + 0xAA54); //reads our local playerbase + the crosshair offset. 0xAA54 is the crosshairID address in memory
+                int inCross = mem.readInt(playerBase + 0x0000AA64); //reads our local playerbase + the crosshair offset. 0x0000AA64 is the crosshairID address in memory
                 if (winAPI.IsKeyPushedDown(triggerKey) && inCross > 0 && inCross < 64) //if incross > 0 && < 64 then that means that there is a player in your crosshair
                     winAPI.DoMouseClick();
 
