@@ -32,7 +32,7 @@ namespace csharpTriggerbotCsgo
                 if (winAPI.IsKeyPushedDown(triggerKey) && inCross > 0 && inCross < 64) //if incross > 0 && < 64 then that means that there is a player in your crosshair
                     winAPI.DoMouseClick();
 
-                Thread.Sleep(1);
+                Thread.Sleep(1); //brings down CPU usage
                     
             }
         }
@@ -42,16 +42,16 @@ namespace csharpTriggerbotCsgo
             Console.WriteLine("key list at http://cherrytree.at/misc/vk.htm");
             Console.Write("Please enter a decimal trigger key value: ");
 
-            string input = Console.ReadLine();
+            string input = Console.ReadLine(); //get decimal key value as a string 
 
             triggerKey = Convert.ToInt16(input); //needs error handling
 
             Console.WriteLine("Confirm that the game is open. Press enter to start");
-            Console.ReadKey();
+            Console.ReadKey(); //waits for enter press
 
             Console.Clear();
             memoryFunctions mem = new memoryFunctions();
-            mem.initialize();
+            mem.initialize(); //starts intialize method 
             triggerLoop(mem, mem.getHandle(), mem.getModuleAddress());
         }
     }
