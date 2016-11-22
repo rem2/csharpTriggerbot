@@ -23,7 +23,7 @@ namespace csharpTriggerbotCsgo
         {
             Console.Beep(100, 400); //started successfully
 
-            int playerBase = mem.readInt((int)(client) + 0x00A8F53C); //0x00A3B43C is the localplayer address in memory
+            int playerBase = mem.readInt((int)(client) + 0x00A9053C); //0x00A9053C is the localplayer address in memory
             windowsAPIs winAPI = new windowsAPIs();
              
             while (true)
